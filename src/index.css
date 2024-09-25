@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Salsa&family=Viga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  animation: fadein .5s ease-in;
+  font-family: "Roboto";
+}
+
+@keyframes fadein {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+.dark-theme {
+  @apply bg-PRIMARY_BLACK text-PRIMARY_WHITE;
+}
+
+.light-theme {
+  @apply bg-PRIMARY_WHITE text-SECONDARY_BLACK;
+}
+
+.coin-slider-theme {
+  @apply bg-DARK_BLUE text-PRIMARY_WHITE font-FONT_SALSA;
+}
+
+.box-theme {
+  @apply bg-gradient-to-r from-gray-800 from-10% to-PRIMARY_BLACK to-90% text-PRIMARY_WHITE;
+}
+
+.input-light {
+  @apply bg-PRIMARY_WHITE rounded-lg py-3 px-5 w-full outline-0 text-xs sm:text-base border text-PRIMARY_BLACK placeholder:uppercase;
+}
+.input-dark {
+  @apply bg-PRIMARY_BLACK rounded-lg py-3 px-5 w-full outline-0 text-xs sm:text-base border text-PRIMARY_WHITE  placeholder:uppercase;
+}
+
+.active {
+  @apply text-SECONDARY_BLUE;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-FONT_SALSA;
+}
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+
+.btn {
+  @apply p-2 font-bold font-FONT_VIGA w-fit uppercase rounded-lg hover:text-PRIMARY_BLUE hover:bg-transparent cursor-pointer  border-2 border-SECONDARY_BLUE h-fit transition-all duration-300;
+}
+.btn-delete {
+  @apply p-2 font-bold font-FONT_VIGA w-fit uppercase rounded-lg bg-SECONDARY_RED hover:text-PRIMARY_RED hover:bg-transparent cursor-pointer  border-2 border-SECONDARY_RED h-fit transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-SECONDARY_BLUE  text-PRIMARY_WHITE;
+}
+
+.icon {
+  @apply w-6 h-6 hover:text-PRIMARY_BLUE;
+}
+
+.input-calc {
+  @apply bg-transparent outline-none w-full px-2;
+}
+
+.btn-calc {
+  @apply w-full p-1 rounded-md hover:text-PRIMARY_BLACK font-FONT_VIGA font-bold bg-PRIMARY_BLACK;
+}
+
+.coin-item-p {
+  @apply text-lg  py-1 rounded-lg px-2 mb-4;
+}
+
+.coin-item-p-light {
+  @apply text-PRIMARY_BLACK bg-SECONDARY_WHITE;
+}
+
+.coin-item-p-dark {
+  @apply bg-SECONDARY_BLACK text-PRIMARY_WHITE;
+}
+
+.calender-space {
+  @apply border h-20 md:h-52 hover:bg-LIGHT_BLUE cursor-pointer flex justify-center items-center;
+}
+
+.calender-space-btn {
+  @apply bg-PRIMARY_BLUE w-2/3 rounded-lg hover:bg-SECONDARY_BLUE hidden;
+}
+
+.calender-space:hover .calender-space-btn {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.coin-table {
+  @apply text-xs sm:text-sm  col-span-2 justify-self-start justify-items-center font-bold;
+}
+
+.coin-header-table {
+  @apply grid grid-cols-8 sm:grid-cols-10 lg:grid-cols-12 items-center ;
+}
+.input-verify-code {
+  @apply border-2 border-SECONDARY_GRAY rounded-lg w-12 h-12 text-center text-2xl font-FONT_VIGA;
+}
+.wrapper-input-coin-journal {
+  @apply flex items-center border-2 rounded-lg overflow-hidden px-2 gap-2 w-full;
+}
+.input-coin-journal {
+  @apply py-2 outline-none text-lg w-full bg-transparent;
+}
+
+/* React -Quill Css*/
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  background-color: gainsboro;
+  border-radius: 20px;
+  padding: 10px !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+.ql-editor {
+  height: 700px;
+}
+
+.ql-formats {
+  display: none;
+}
+
+/* React -Quill Css */
+
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+  right: -15px;
+}
+
+.ql-editor li:not(.ql-direction-rtl)::before {
+  margin-left: -0.5em;
+  margin-right: 1.3em;
+  text-align: right;
+}
+
+/* Verstecke den Stepper */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* optional */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+.bg-PLATINUM_COLOR {
+  background-color: #7dd3fc; /* Hier deine gewünschte Farbe einfügen */
+}
