@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const CoinSlider = () => {
  
   const coins = useSelector(displayCoins);
-  console.log("coins", coins)
+
   const navigate = useNavigate();
   const [_, setActiveIndex] = useState(0);
   const responsive = {
@@ -54,21 +54,23 @@ const CoinSlider = () => {
             <div className="flex gap-3 ">
               <span className="font-bold text-xl"></span>
               <span className="text-xl font-bold">
-                {coin.current_price.toLocaleString(undefined, {
-                  maximumFractionDigits: 3,
-                })}{" "}
-                USDT
-              </span>
+  {coin.current_price
+    ? coin.current_price.toLocaleString(undefined, { maximumFractionDigits: 3 })
+    : "N/A"}{" "}
+  USDT
+</span>
             </div>
             <div className="flex gap-3">
-              <span
-                className={`rounded-lg px-1 w-32 text-center ${
-                  coin.price_change_24h < 0 ? "bg-PRIMARY_RED" : " bg-green-600"
-                }`}
-              >
-                {coin.price_change_24h }{" "}
-                $
-              </span>
+            <span
+  className={`rounded-lg px-1 w-32 text-center ${
+    coin.price_change_24h < 0 ? "bg-PRIMARY_RED" : " bg-green-600"
+  }`}
+>
+  {coin.price_change_24h
+    ? coin.price_change_24h.toLocaleString(undefined, { maximumFractionDigits: 3 })
+    : "N/A"}{" "}
+  $
+</span>
             </div>
           </div>
         </div>
